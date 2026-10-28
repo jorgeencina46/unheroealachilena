@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #000; /* Fondo negro para las franjas laterales */
+    background-color: #000;
     color: #fff;
     overflow: hidden; 
 }
@@ -54,11 +54,11 @@ body {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    object-fit: contain; /* <--- ESTA ES LA LÍNEA MÁGICA */
+    object-fit: contain; /* Mantiene la imagen completa */
     z-index: 1; 
 }
 
-/* Filtro sutil para resaltar el contador */
+/* Filtro sutil para resaltar los textos flotantes */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -68,4 +68,45 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.2); 
     z-index: 2; 
+}
+
+/* --- REDES SOCIALES --- */
+.redes-sociales {
+    position: fixed;
+    bottom: 30px; 
+    right: 30px;  
+    display: flex;
+    gap: 15px; 
+    z-index: 10; 
+}
+
+.redes-sociales a {
+    color: #fff;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.7); 
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    text-decoration: none;
+    border: 1px solid #444;
+    transition: all 0.3s ease; 
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.redes-sociales a:hover {
+    background-color: #f1c40f; 
+    color: #000;
+    transform: translateY(-5px) scale(1.1); 
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+    .redes-sociales {
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%); /* Centra los iconos en pantallas pequeñas */
+    }
 }
